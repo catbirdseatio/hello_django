@@ -1,13 +1,16 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
-{% block title %}{{ block.super }} - Log Out{% endblock  %}
+{% block title %}{{ block.super }} - Log Out{% endblock %}
 
 {% block content %}
-    <h2>Log Out</h2>
+<section class="section has-text-centered">
+    <h2 class="title">Log Out</h2>
     <form method="post">
         {% csrf_token %}
         <p>Are you sure you want to log out?</p>
-        {{ form.as_p }}
-        <button type="submit">Log Out</button>
-    </form>
-{% endblock  %}
+        {{ form|crispy }}
+        <button type="submit" class="button is-danger mt-4">Log Out</button>
+    </section>
+</form>
+{% endblock %}

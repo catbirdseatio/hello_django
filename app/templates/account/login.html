@@ -1,12 +1,15 @@
 {% extends '_base.html' %}
+{% load crispy_forms_tags %}
 
-{% block title %}{{ block.super }} - Log In{% endblock  %}
+{% block title %}{{ block.super }} - Log In{% endblock %}
 
 {% block content %}
+<section class="section">
     <h2>Log In</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Log In</button>
+        {{ form|crispy }}
+        <button type="submit" class="button is-primary">Log In</button>
     </form>
-{% endblock  %}
+</section>
+{% endblock %}
