@@ -132,7 +132,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # AUTH SETTINGS
 AUTH_USER_MODEL = "accounts.CustomUser"
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 AUTHENTICATION_BACKENDS = (
     "django.contrib.auth.backends.ModelBackend",
@@ -153,3 +152,15 @@ ACCOUNT_LOGOUT_REDIRECT_URL = "index"
 # CRISPY FORMS SETTINGS
 CRISPY_ALLOWED_TEMPLATE_PACKS = ("bulma",)
 CRISPY_TEMPLATE_PACK = "bulma"
+
+# EMAIL SETTINGS
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey' # Name for all the SenGrid accounts
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
+
+# The email you'll be sending emails from
+DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL', default='noreply@gmail.com')
+
