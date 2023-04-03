@@ -68,7 +68,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 
 # DATABASE SETTINGS
 DATABASES = {
-    'default': dj_database_url.config(
+    "default": dj_database_url.config(
         conn_max_age=600,
         conn_health_checks=True,
     ),
@@ -77,7 +77,7 @@ DATABASES = {
 # Database
 # FORMAT: DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME
 DATABASES = {
-    'default': dj_database_url.config(
+    "default": dj_database_url.config(
         conn_max_age=600,
         conn_health_checks=True,
     ),
@@ -155,12 +155,11 @@ CRISPY_TEMPLATE_PACK = "bulma"
 
 # EMAIL SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = "smtp.sendgrid.net"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey' # Name for all the SenGrid accounts
-EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
+EMAIL_HOST_USER = "apikey"  # Name for all the SenGrid accounts
+EMAIL_HOST_PASSWORD = os.environ.get("SENDGRID_API_KEY")
 
 # The email you'll be sending emails from
-DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL', default='noreply@gmail.com')
-
+DEFAULT_FROM_EMAIL = os.environ.get("FROM_EMAIL", default="noreply@gmail.com")

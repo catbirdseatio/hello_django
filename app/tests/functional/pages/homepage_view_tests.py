@@ -33,5 +33,3 @@ class TestHomepage:
     def test_homepage_url_resolves_homepageview(self, rf):
         view = resolve("/")
         assert view.func.__name__ == HomePageView.as_view().__name__
-
-
